@@ -1,2 +1,2 @@
-# reviews-and-questions
-Repository for API to handle reviews and questions.
+# ratings-and-reviews
+Ratings and reviews API server
