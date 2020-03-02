@@ -1,33 +1,33 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('characteristicsId', {
+	return sequelize.define('characteristics_id', {
 		id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			defaultValue: 'nextval("Characteristics_id_seq"::regclass)',
 			primaryKey: true,
-			field: 'id'
+      field: 'id',
+      autoIncrement: true
+
 		},
-		characteristicId: {
+		characteristic_id: {
 			type: DataTypes.INTEGER,
-			allowNull: true,
-			primaryKey: true,
+			allowNull: false,
 			field: 'characteristic_id'
 		},
-		reviewId: {
+		review_id: {
 			type: DataTypes.INTEGER,
-			allowNull: true,
-			primaryKey: true,
+			allowNull: false,
 			field: 'review_id'
 		},
 		value: {
 			type: DataTypes.INTEGER,
-			allowNull: true,
+			allowNull: false,
 			field: 'value'
 		}
 	}, {
-		tableName: 'Characteristics_id',
-    timestamps: false
+		tableName: 'characteristics_id',
+    timestamps: false,
+    underscored: true
 	});
 };
