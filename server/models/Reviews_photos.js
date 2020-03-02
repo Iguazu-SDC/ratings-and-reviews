@@ -1,17 +1,18 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('reviewsPhotos', {
+	return sequelize.define('reviews_Photos', {
 		id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			defaultValue: 'nextval("Reviews_photos_id_seq"::regclass)',
 			primaryKey: true,
-			field: 'id'
+      field: 'id',
+      autoIncrement: true
+
 		},
-		reviewId: {
+		review_id: {
 			type: DataTypes.INTEGER,
-			allowNull: true,
+			allowNull: false,
 			primaryKey: true,
 			field: 'review_id'
 		},
@@ -21,7 +22,8 @@ module.exports = function(sequelize, DataTypes) {
 			field: 'url'
 		}
 	}, {
-		tableName: 'Reviews_photos',
-    timestamps: false
+		tableName: 'reviews_photos',
+    timestamps: false,
+    underscored: true
 	});
 };

@@ -2,14 +2,14 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define(
-    "Product",
+    "product",
     {
       id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: 'nextval("Product_id_seq"::regclass)',
         primaryKey: true,
-        field: "id"
+        field: "id",
+        autoIncrement: true
       },
       name: {
         type: DataTypes.STRING,
@@ -31,15 +31,16 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: true,
         field: "category"
       },
-      defaultPrice: {
+      default_price: {
         type: DataTypes.INTEGER,
         allowNull: true,
         field: "default_price"
       }
     },
     {
-      tableName: "Product",
-      timestamps: false
+      tableName: "product",
+      timestamps: false,
+      underscored: true
     }
   );
 };

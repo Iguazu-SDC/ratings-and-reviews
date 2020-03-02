@@ -5,14 +5,14 @@ module.exports = function(sequelize, DataTypes) {
 		id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			defaultValue: 'nextval("Characteristics_id_seq1"::regclass)',
 			primaryKey: true,
-			field: 'id'
+      field: 'id',
+      autoIncrement: true
+
 		},
-		productId: {
+		product_id: {
 			type: DataTypes.INTEGER,
-			allowNull: true,
-			primaryKey: true,
+			allowNull: false,
 			field: 'product_id'
 		},
 		name: {
@@ -21,7 +21,8 @@ module.exports = function(sequelize, DataTypes) {
 			field: 'name'
 		}
 	}, {
-		tableName: 'Characteristics',
-    timestamps: false
+		tableName: 'characteristics',
+    timestamps: false,
+    underscored: true
 	});
 };
